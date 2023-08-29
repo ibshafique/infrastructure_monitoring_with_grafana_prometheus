@@ -126,7 +126,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "node_load1{}",
+          "expr": "node_load1{job=\"$job\"}",
           "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
@@ -220,7 +220,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "node_load5{}",
+          "expr": "node_load5{job=\"$job\"}",
           "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
@@ -314,7 +314,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "node_load15{}",
+          "expr": "node_load15{job=\"$job\"}",
           "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
@@ -380,7 +380,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "node_time_seconds{} - node_boot_time_seconds{}",
+          "expr": "node_time_seconds{job=\"$job\"} - node_boot_time_seconds{job=\"$job\"}",
           "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
@@ -477,7 +477,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "count(up{}==1)",
+          "expr": "count(up{job=\"$job\"}==1)",
           "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
@@ -566,8 +566,13 @@
       "id": 6,
       "options": {
         "legend": {
-          "calcs": [],
-          "displayMode": "list",
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
@@ -583,7 +588,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "(sum by(instance) (irate(node_cpu_seconds_total{mode!=\"idle\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{}[$__rate_interval])))) * 100",
+          "expr": "(sum by(instance) (irate(node_cpu_seconds_total{mode!=\"idle\", job=\"$job\"}[$__rate_interval])) / on(instance) group_left sum by (instance)((irate(node_cpu_seconds_total{job=\"$job\"}[$__rate_interval])))) * 100",
           "legendFormat": "{{label_name}}",
           "range": true,
           "refId": "A"
@@ -662,8 +667,13 @@
       "id": 2,
       "options": {
         "legend": {
-          "calcs": [],
-          "displayMode": "list",
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
@@ -679,7 +689,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "((node_memory_MemTotal_bytes{} - node_memory_MemFree_bytes{}) / (node_memory_MemTotal_bytes{} )) * 100",
+          "expr": "((node_memory_MemTotal_bytes{job=\"$job\"} - node_memory_MemFree_bytes{job=\"$job\"}) / (node_memory_MemTotal_bytes{job=\"$job\"} )) * 100",
           "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
@@ -755,8 +765,13 @@
       "id": 4,
       "options": {
         "legend": {
-          "calcs": [],
-          "displayMode": "list",
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min"
+          ],
+          "displayMode": "table",
           "placement": "bottom",
           "showLegend": true
         },
@@ -772,7 +787,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\"})",
+          "expr": "100 - ((node_filesystem_avail_bytes{mountpoint=\"/\",fstype!=\"rootfs\", job=\"$job\"} * 100) / node_filesystem_size_bytes{mountpoint=\"/\",fstype!=\"rootfs\", job=\"$job\"})",
           "legendFormat": "{{instance}}",
           "range": true,
           "refId": "A"
@@ -1168,7 +1183,7 @@
         ]
       },
       "gridPos": {
-        "h": 10,
+        "h": 14,
         "w": 12,
         "x": 0,
         "y": 40
@@ -1200,28 +1215,13 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "irate(node_disk_read_time_seconds_total{}[$__rate_interval]) / irate(node_disk_reads_completed_total{}[$__rate_interval])",
+          "expr": "irate(node_disk_read_time_seconds_total{job=\"$job\"}[$__rate_interval]) / irate(node_disk_reads_completed_total{job=\"$job\"}[$__rate_interval])",
           "hide": false,
           "interval": "",
           "intervalFactor": 4,
           "legendFormat": "{{instance}}-{{device}}",
           "range": true,
           "refId": "A",
-          "step": 240
-        },
-        {
-          "datasource": {
-            "type": "prometheus",
-            "uid": "Sa7j20gSk"
-          },
-          "editorMode": "code",
-          "expr": "irate(node_disk_write_time_seconds_total{}[$__rate_interval]) / irate(node_disk_writes_completed_total{}[$__rate_interval])",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{instance}}-{{device}}",
-          "range": true,
-          "refId": "B",
           "step": 240
         }
       ],
@@ -1602,7 +1602,7 @@
         ]
       },
       "gridPos": {
-        "h": 10,
+        "h": 14,
         "w": 12,
         "x": 12,
         "y": 40
@@ -1634,7 +1634,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "irate(node_disk_write_time_seconds_total{}[$__rate_interval]) / irate(node_disk_writes_completed_total{}[$__rate_interval])",
+          "expr": "irate(node_disk_write_time_seconds_total{job=\"$job\"}[$__rate_interval]) / irate(node_disk_writes_completed_total{job=\"$job\"}[$__rate_interval])",
           "hide": false,
           "interval": "",
           "intervalFactor": 1,
@@ -2024,7 +2024,7 @@
         "h": 18,
         "w": 12,
         "x": 0,
-        "y": 50
+        "y": 54
       },
       "id": 30,
       "links": [],
@@ -2053,7 +2053,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "irate(node_disk_reads_completed_total{}[$__rate_interval])",
+          "expr": "irate(node_disk_reads_completed_total{job=\"$job\"}[$__rate_interval])",
           "intervalFactor": 4,
           "legendFormat": "{{instance}}-{{device}}",
           "range": true,
@@ -2441,7 +2441,7 @@
         "h": 18,
         "w": 12,
         "x": 12,
-        "y": 50
+        "y": 54
       },
       "id": 31,
       "links": [],
@@ -2470,7 +2470,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "irate(node_disk_writes_completed_total{}[$__rate_interval])",
+          "expr": "irate(node_disk_writes_completed_total{job=\"$job\"}[$__rate_interval])",
           "intervalFactor": 1,
           "legendFormat": "{{instance}}-{{device}}",
           "range": true,
@@ -2487,7 +2487,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 68
+        "y": 72
       },
       "id": 13,
       "panels": [],
@@ -2556,7 +2556,7 @@
         "h": 11,
         "w": 12,
         "x": 0,
-        "y": 69
+        "y": 73
       },
       "id": 8,
       "options": {
@@ -2578,7 +2578,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "irate(node_network_receive_bytes_total{device=\"ens3\"}[$__rate_interval])*8",
+          "expr": "irate(node_network_receive_bytes_total{device=\"ens3\",job=\"$job\"}[$__rate_interval])*8",
           "legendFormat": "{{instance}} - {{device}}",
           "range": true,
           "refId": "A"
@@ -2649,7 +2649,7 @@
         "h": 11,
         "w": 12,
         "x": 12,
-        "y": 69
+        "y": 73
       },
       "id": 9,
       "options": {
@@ -2671,7 +2671,7 @@
             "uid": "Sa7j20gSk"
           },
           "editorMode": "code",
-          "expr": "irate(node_network_transmit_bytes_total{device=\"ens3\"}[$__rate_interval])*8",
+          "expr": "irate(node_network_transmit_bytes_total{device=\"ens3\", job=\"$job\"}[$__rate_interval])*8",
           "legendFormat": "{{instance}} - {{device}}",
           "range": true,
           "refId": "A"
@@ -2689,7 +2689,7 @@
     "list": [
       {
         "current": {
-          "selected": false,
+          "selected": true,
           "text": "Connect-OAS",
           "value": "Connect-OAS"
         },
@@ -2702,7 +2702,7 @@
         "includeAll": false,
         "label": "Sites",
         "multi": false,
-        "name": "Sites",
+        "name": "job",
         "options": [],
         "query": {
           "query": "label_values(node_uname_info, job)",
@@ -2722,8 +2722,8 @@
   },
   "timepicker": {},
   "timezone": "Asia/Dhaka",
-  "title": "All Data Grouped",
+  "title": "All Data Metrics",
   "uid": "L2Cu3LgSk",
-  "version": 20,
+  "version": 26,
   "weekStart": ""
 }
