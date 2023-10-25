@@ -69,7 +69,7 @@ scrape_configs:
     # scheme defaults to 'http'.
 
     static_configs:
-      - targets: ["192.168.51.188:9090"]
+      - targets: ["localhost:9090"]
 EOF
 
 # Changing ownership of prometheus directory
