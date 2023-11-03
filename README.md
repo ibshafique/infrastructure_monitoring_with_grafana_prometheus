@@ -146,3 +146,6 @@ The Default Admin ID-Password for logging into Grafana is:
 Username : admin
 
 Password : admin
+
+
+# Backup And Restore
