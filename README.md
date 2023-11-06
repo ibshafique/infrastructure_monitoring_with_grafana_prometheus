@@ -129,6 +129,19 @@ from_name = GrafanaNinja
 ;startTLS_policy = NoStartTLS
 ```
 
+```
+[database]
+# You can configure the database connection by specifying type, host, name, user and password
+# as separate properties or as on string using the url properties.
+
+# Either "mysql", "postgres" or "sqlite3", it's your choice
+type = sqlite3
+wal = true
+;host = 127.0.0.1:3306
+;name = grafana
+;user = root
+```
+
 
 # Accessing The WebUIs
 
