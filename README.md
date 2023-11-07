@@ -1,10 +1,12 @@
 # infrastructure_monitoring_with_grafana_prometheus
 
-Why Prometheus and Grafana?
+## Why Prometheus and Grafana?
 
-Work Flow
+## Work Flow
 
-Special Features
+<img src="https://github.com/ibshafique/infrastructure_monitoring_with_grafana_prometheus/blob/main/assets/workflow.png">
+
+## Special Features
 
 
 
