@@ -80,6 +80,38 @@ scrape_configs:
       - targets: ["10.10.20.2:9100"]          #env2-host2
         labels:
                 instance: 'env2-host2'
+  - job_name: 'TherapConnect Alpha TCP'
+    metrics_path: /probe
+    params:
+        module: [tcp_connect] 
+    static_configs:
+      - targets: ["10.10.10.1:9100"]          #env1-host1
+        labels:
+                instance: "env1-host1:9100"
+      - targets: ["10.10.20.1:9100"]          #env2-host1
+        labels:
+                instance: 'env2-host1:9100'
+    relabel_configs:
+          - source_labels: [__address__]
+            target_label: __param_target
+          - target_label: __address__
+            replacement: 172.0.0.1:9115
+
+  - job_name: 'Website Monitoring'
+    metrics_path: /probe
+    params:
+        module: [http_2xx]
+    static_configs:
+          - targets:
+            - https://www.abc.com
+            - https://www.xyz.com
+    relabel_configs:
+          - source_labels: [__address__]
+            target_label: __param_target
+          - source_labels: [__param_target]
+            target_label: instance
+          - target_label: __address__
+            replacement: 172.0.0.1:9115
 ```
 
 
