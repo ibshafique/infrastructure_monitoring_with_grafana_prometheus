@@ -38,7 +38,7 @@
       },
       "id": 33,
       "panels": [],
-      "title": "Row title",
+      "title": "Port and Site Monitoring",
       "type": "row"
     },
     {
@@ -87,16 +87,16 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 0,
         "y": 1
       },
       "id": 35,
       "options": {
-        "displayMode": "gradient",
-        "minVizHeight": 10,
-        "minVizWidth": 0,
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -105,7 +105,7 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "textMode": "auto"
       },
       "pluginVersion": "9.3.6",
       "targets": [
@@ -122,7 +122,7 @@
         }
       ],
       "title": "TherapConnect Alpha TCP",
-      "type": "bargauge"
+      "type": "stat"
     },
     {
       "datasource": {
@@ -170,17 +170,17 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
+        "h": 9,
         "w": 12,
         "x": 12,
         "y": 1
       },
       "id": 37,
       "options": {
-        "displayMode": "gradient",
-        "minVizHeight": 10,
-        "minVizWidth": 0,
-        "orientation": "vertical",
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
+        "orientation": "auto",
         "reduceOptions": {
           "calcs": [
             "lastNotNull"
@@ -188,7 +188,7 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "textMode": "auto"
       },
       "pluginVersion": "9.3.6",
       "targets": [
@@ -205,7 +205,7 @@
         }
       ],
       "title": "TherapConnect Production TCP",
-      "type": "bargauge"
+      "type": "stat"
     },
     {
       "datasource": {
@@ -254,14 +254,14 @@
       "gridPos": {
         "h": 8,
         "w": 12,
-        "x": 5,
-        "y": 9
+        "x": 6,
+        "y": 10
       },
       "id": 36,
       "options": {
-        "displayMode": "gradient",
-        "minVizHeight": 10,
-        "minVizWidth": 0,
+        "colorMode": "value",
+        "graphMode": "area",
+        "justifyMode": "auto",
         "orientation": "auto",
         "reduceOptions": {
           "calcs": [
@@ -270,7 +270,7 @@
           "fields": "",
           "values": false
         },
-        "showUnfilled": true
+        "textMode": "auto"
       },
       "pluginVersion": "9.3.6",
       "targets": [
@@ -287,7 +287,7 @@
         }
       ],
       "title": "Site Monitoring",
-      "type": "bargauge"
+      "type": "stat"
     },
     {
       "collapsed": false,
@@ -295,7 +295,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 17
+        "y": 18
       },
       "id": 21,
       "panels": [],
@@ -364,7 +364,7 @@
         "h": 7,
         "w": 9,
         "x": 0,
-        "y": 18
+        "y": 19
       },
       "id": 17,
       "options": {
@@ -458,7 +458,7 @@
         "h": 7,
         "w": 8,
         "x": 9,
-        "y": 18
+        "y": 19
       },
       "id": 18,
       "options": {
@@ -552,7 +552,7 @@
         "h": 7,
         "w": 7,
         "x": 17,
-        "y": 18
+        "y": 19
       },
       "id": 19,
       "options": {
@@ -616,7 +616,7 @@
         "h": 8,
         "w": 9,
         "x": 0,
-        "y": 25
+        "y": 26
       },
       "id": 15,
       "options": {
@@ -707,7 +707,7 @@
         "h": 8,
         "w": 8,
         "x": 9,
-        "y": 25
+        "y": 26
       },
       "id": 23,
       "options": {
@@ -753,7 +753,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 33
+        "y": 34
       },
       "id": 11,
       "panels": [],
@@ -805,7 +805,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -821,7 +822,7 @@
         "h": 11,
         "w": 12,
         "x": 0,
-        "y": 34
+        "y": 35
       },
       "id": 6,
       "options": {
@@ -905,7 +906,8 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green"
+                "color": "green",
+                "value": null
               },
               {
                 "color": "red",
@@ -921,7 +923,7 @@
         "h": 11,
         "w": 12,
         "x": 12,
-        "y": 34
+        "y": 35
       },
       "id": 2,
       "options": {
@@ -1018,7 +1020,7 @@
         "h": 11,
         "w": 12,
         "x": 0,
-        "y": 45
+        "y": 46
       },
       "id": 4,
       "options": {
@@ -1060,7 +1062,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 56
+        "y": 57
       },
       "id": 28,
       "panels": [],
@@ -1443,7 +1445,7 @@
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 57
+        "y": 58
       },
       "id": 25,
       "links": [],
@@ -1861,7 +1863,7 @@
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 57
+        "y": 58
       },
       "id": 26,
       "links": [],
@@ -2279,7 +2281,7 @@
         "h": 18,
         "w": 12,
         "x": 0,
-        "y": 71
+        "y": 72
       },
       "id": 30,
       "links": [],
@@ -2695,7 +2697,7 @@
         "h": 18,
         "w": 12,
         "x": 12,
-        "y": 71
+        "y": 72
       },
       "id": 31,
       "links": [],
@@ -2741,7 +2743,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 89
+        "y": 90
       },
       "id": 13,
       "panels": [],
@@ -2809,7 +2811,7 @@
         "h": 11,
         "w": 12,
         "x": 0,
-        "y": 90
+        "y": 91
       },
       "id": 8,
       "options": {
@@ -2901,7 +2903,7 @@
         "h": 11,
         "w": 12,
         "x": 12,
-        "y": 90
+        "y": 91
       },
       "id": 9,
       "options": {
@@ -2969,13 +2971,13 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "America/New_York",
   "title": "All Data Metrics",
   "uid": "L2Cu3LgSk",
-  "version": 37,
+  "version": 42,
   "weekStart": ""
 }
