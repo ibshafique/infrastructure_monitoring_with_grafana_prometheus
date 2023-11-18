@@ -36,6 +36,267 @@
         "x": 0,
         "y": 0
       },
+      "id": 33,
+      "panels": [],
+      "title": "Row title",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Sa7j20gSk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 1
+      },
+      "id": 35,
+      "options": {
+        "displayMode": "gradient",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Sa7j20gSk"
+          },
+          "editorMode": "code",
+          "expr": "probe_success{job=\"TherapConnect Alpha TCP\"}",
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "TherapConnect Alpha TCP",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Sa7j20gSk"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 12,
+        "y": 1
+      },
+      "id": 37,
+      "options": {
+        "displayMode": "gradient",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "vertical",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Sa7j20gSk"
+          },
+          "editorMode": "code",
+          "expr": "probe_success{job=\"TherapConnect Production TCP\"}",
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "TherapConnect Production TCP",
+      "type": "bargauge"
+    },
+    {
+      "datasource": {
+        "type": "prometheus",
+        "uid": "Sa7j20gSk"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "red",
+                  "index": 1,
+                  "text": "DOWN"
+                },
+                "1": {
+                  "color": "green",
+                  "index": 0,
+                  "text": "UP"
+                }
+              },
+              "type": "value"
+            }
+          ],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "none"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 5,
+        "y": 9
+      },
+      "id": 36,
+      "options": {
+        "displayMode": "gradient",
+        "minVizHeight": 10,
+        "minVizWidth": 0,
+        "orientation": "auto",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "9.3.6",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "Sa7j20gSk"
+          },
+          "editorMode": "code",
+          "expr": "probe_success{job=\"Secure Site Monitor\"}",
+          "legendFormat": "{{instance}}",
+          "range": true,
+          "refId": "A"
+        }
+      ],
+      "title": "Site Monitoring",
+      "type": "bargauge"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
       "id": 21,
       "panels": [],
       "title": "System Information",
@@ -103,7 +364,7 @@
         "h": 7,
         "w": 9,
         "x": 0,
-        "y": 1
+        "y": 18
       },
       "id": 17,
       "options": {
@@ -197,7 +458,7 @@
         "h": 7,
         "w": 8,
         "x": 9,
-        "y": 1
+        "y": 18
       },
       "id": 18,
       "options": {
@@ -291,7 +552,7 @@
         "h": 7,
         "w": 7,
         "x": 17,
-        "y": 1
+        "y": 18
       },
       "id": 19,
       "options": {
@@ -338,8 +599,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -355,7 +615,7 @@
         "h": 8,
         "w": 9,
         "x": 0,
-        "y": 8
+        "y": 25
       },
       "id": 15,
       "options": {
@@ -425,8 +685,7 @@
             "mode": "percentage",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "orange",
@@ -446,7 +705,7 @@
         "h": 8,
         "w": 8,
         "x": 9,
-        "y": 8
+        "y": 25
       },
       "id": 23,
       "options": {
@@ -492,7 +751,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 16
+        "y": 33
       },
       "id": 11,
       "panels": [],
@@ -544,8 +803,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -561,7 +819,7 @@
         "h": 11,
         "w": 12,
         "x": 0,
-        "y": 17
+        "y": 34
       },
       "id": 6,
       "options": {
@@ -645,8 +903,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -662,7 +919,7 @@
         "h": 11,
         "w": 12,
         "x": 12,
-        "y": 17
+        "y": 34
       },
       "id": 2,
       "options": {
@@ -743,8 +1000,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -760,7 +1016,7 @@
         "h": 11,
         "w": 12,
         "x": 0,
-        "y": 28
+        "y": 45
       },
       "id": 4,
       "options": {
@@ -802,7 +1058,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 39
+        "y": 56
       },
       "id": 28,
       "panels": [],
@@ -856,8 +1112,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1186,7 +1441,7 @@
         "h": 14,
         "w": 12,
         "x": 0,
-        "y": 40
+        "y": 57
       },
       "id": 25,
       "links": [],
@@ -1275,8 +1530,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -1605,7 +1859,7 @@
         "h": 14,
         "w": 12,
         "x": 12,
-        "y": 40
+        "y": 57
       },
       "id": 26,
       "links": [],
@@ -1694,8 +1948,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2024,7 +2277,7 @@
         "h": 18,
         "w": 12,
         "x": 0,
-        "y": 54
+        "y": 71
       },
       "id": 30,
       "links": [],
@@ -2111,8 +2364,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2441,7 +2693,7 @@
         "h": 18,
         "w": 12,
         "x": 12,
-        "y": 54
+        "y": 71
       },
       "id": 31,
       "links": [],
@@ -2487,7 +2739,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 72
+        "y": 89
       },
       "id": 13,
       "panels": [],
@@ -2539,8 +2791,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2556,7 +2807,7 @@
         "h": 11,
         "w": 12,
         "x": 0,
-        "y": 73
+        "y": 90
       },
       "id": 8,
       "options": {
@@ -2632,8 +2883,7 @@
             "mode": "absolute",
             "steps": [
               {
-                "color": "green",
-                "value": null
+                "color": "green"
               },
               {
                 "color": "red",
@@ -2649,7 +2899,7 @@
         "h": 11,
         "w": 12,
         "x": 12,
-        "y": 73
+        "y": 90
       },
       "id": 9,
       "options": {
@@ -2689,9 +2939,9 @@
     "list": [
       {
         "current": {
-          "selected": true,
-          "text": "Connect-OAS",
-          "value": "Connect-OAS"
+          "selected": false,
+          "text": "TherapConnect Beta",
+          "value": "TherapConnect Beta"
         },
         "datasource": {
           "type": "prometheus",
@@ -2717,13 +2967,13 @@
     ]
   },
   "time": {
-    "from": "now-2d",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
-  "timezone": "Asia/Dhaka",
+  "timezone": "America/New_York",
   "title": "All Data Metrics",
   "uid": "L2Cu3LgSk",
-  "version": 26,
+  "version": 35,
   "weekStart": ""
 }
