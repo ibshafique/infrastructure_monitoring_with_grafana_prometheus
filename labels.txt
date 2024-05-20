@@ -1,0 +1,15 @@
+Disk:
+{{if gt $values.B.Value 90.0}}[critical]{{else if and (ge $values.B.Value 80.0) (lt $values.B.Value 90.0)}}[warning]{{else}}[low]{{end}}
+
+LoadAvg 1:
+{{if gt $values.LOAD1.Value 8.0}}[critical]{{else if and (ge $values.LOAD1.Value 5.0) (lt $values.LOAD1.Value 8.0)}}[warning]{{else}}[low]{{end}}
+LoadAvg 5:
+{{if gt $values.LOAD5.Value 8.0}}[critical]{{else if and (ge $values.LOAD5.Value 5.0) (lt $values.LOAD5.Value 8.0)}}[warning]{{else}}[low]{{end}}
+LoadAvg 15:
+{{if gt $values.LOAD15.Value 8.0}}[critical]{{else if and (ge $values.LOAD15.Value 5.0) (lt $values.LOAD15.Value 8.0)}}[warning]{{else}}[low]{{end}}
+
+RAM:
+{{if gt $values.PERCENTAGE.Value 90.0}}[critical]{{else if and (ge $values.PERCENTAGE.Value 80.0) (lt $values.PERCENTAGE.Value 90.0)}}[warning]{{else}}[low]{{end}}
+
+CPU:
+{{if gt $values.CPU.Value 90.0}}[critical]{{else if and (ge $values.CPU.Value 80.0) (lt $values.CPU.Value 90.0)}}[warning]{{else}}[low]{{end}}

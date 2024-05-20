@@ -1,0 +1,22 @@
+{{ define "google-chat.title" -}}
+ An Alert has been Triggered.[{{.Status}}] {{ .CommonLabels.Severity }}
+{{- end -}}
+
+
+{{- define "google-chat.text" -}}
+{{- range .Alerts -}}
+{{ if gt (len .Annotations) 0 }}
+Summary: {{ .Annotations.summary}}
+
+
+Description: {{ .Annotations.description }}
+
+
+Please investigate this alert and take appropriate action.
+
+
+Thanks,
+CloudOps Team
+{{ end }}
+{{ end }}
+{{ end }}

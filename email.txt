@@ -1,0 +1,44 @@
+{{ define "grafanatest" }}
+
+Hi Team,
+This email is to notify you of an alert that has been triggered.
+
+Description:
+{{ .CommonAnnotations.description }}
+
+Summary: 
+{{ .CommonAnnotations.summary }}
+
+Please investigate this alert and take appropriate action.
+ 
+ Thanks,
+ The Grafana team
+{{ end }}
+
+########################################################################################
+########################################################################################
+
+{{ define "email.subject" }}
+{{ .CommonLabels.job }} || {{ .CommonLabels.alertname }} | {{ .CommonLabels.instance }} 
+{{ end }}
+
+{{ define "email.body" }}
+
+Status: {{.Status}} 
+Severity: {{ .CommonLabels.Severity }}
+
+Hi,
+
+This email is to notify you of an alert that has been triggered.
+
+Description:
+{{ .CommonAnnotations.description }}
+
+Summary:
+{{ .CommonAnnotations.summary }}
+
+Please investigate this alert and take appropriate action.
+
+Thanks,
+The Grafana Team
+{{ end }}
